@@ -5,4 +5,4 @@ Single page app made with vue.js, kinvey and rest. It has some bugs, but the mai
 -Delete post if it is yours
 -Edit post if it is yours
 -Comment post
--Delete post if it is yours
+-Delete comment if it is yours
