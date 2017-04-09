@@ -23,6 +23,7 @@
 
 <script>
     import VueRouter from 'vue-router'
+    import auth from '../auth'
 
     export default{
 
@@ -35,9 +36,18 @@
             }
         },
         methods:{
+            saveAuthInSession(response) {
+                let userAuth = response.data._kmd.authtoken;
+                sessionStorage.setItem('authToken', userAuth);
+                let userId = response.data._id;
+                sessionStorage.setItem('userId', userId);
+                let user = response.data.username;
+                sessionStorage.setItem('user', user);
+
+            },
             redirect(){
                 var router = new VueRouter() ;
-                router.push('/login')
+                router.push('/list')
             },
             register(){
                 const kinveyBaseUrl = "https://baas.kinvey.com/";
@@ -59,8 +69,9 @@
                     headers: kinveyAppAuthHeaders,
                     data: userData,
                 }).then(function(response) {
+                    self.saveAuthInSession(response);
+                    auth.auth=true;
                     self.redirect();
-                    console.log(response)
                     self.loading=false;
                 }).catch(function (error) {
                     self.message= "invalid credidentials"

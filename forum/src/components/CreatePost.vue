@@ -53,19 +53,21 @@
                 };
                 console.log(postData)
                 var self = this;
-                axios({
-                    method: "POST",
-                    url: kinveyPostsUrl,
-                    headers: this.getKinveyUserAuthHeaders(),
-                    data: postData,
-                    /*success: /!*this.redirect()*!/ console.log("ivan"),
-                     error:console.log('brat')*/
-                }).then(function(response) {
-                    self.redirect();
-                    console.log(response)
-                }).catch(function (error) {
-                    self.message= "invalid"
-                })
+                if(postData.title != '' && postData.content !=''){
+                    axios({
+                        method: "POST",
+                        url: kinveyPostsUrl,
+                        headers: this.getKinveyUserAuthHeaders(),
+                        data: postData,
+                        /*success: /!*this.redirect()*!/ console.log("ivan"),
+                         error:console.log('brat')*/
+                    }).then(function(response) {
+                        self.redirect();
+                        console.log(response)
+                    }).catch(function (error) {
+                        self.message= "invalid"
+                    })
+                }
             }
         }
     }

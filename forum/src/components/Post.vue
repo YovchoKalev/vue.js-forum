@@ -243,4 +243,15 @@
     a{
         color:#fff;
     }
+    .card-panel{
+        color:#fff;
+    }
+    .float-left{
+        float:left;
+        margin-top: -10px;
+    }
+    .float-right{
+        float:right;
+        margin-top: -10px;
+    }
 </style>

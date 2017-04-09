@@ -69,14 +69,8 @@
                     auth.auth=true;
                     self.redirect();
                     self.loading = false;
-
-                    console.log(auth.auth);
-
-
-
-
                 }).catch(function (error) {
-                    self.message= "invalid credidentials"
+                    self.message= "invalid credidentials";
                     self.loading = false;
                 })
 

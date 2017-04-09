@@ -33,5 +33,6 @@
     }
     .card-panel{
         background-color: #ee6e73;
+        color: #fff;
     }
 </style>

@@ -68,12 +68,12 @@
                 };
                 let kinveyListUrl = '';
                 let skip = this.$route.params.page* 3 - 3;
-                if(this.$route.params.page >1){
+                if(this.$route.params.page >=1){
 
-                    kinveyListUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + `/posts?query={}&limit=${3}&skip=${skip}`
+                    kinveyListUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + `/posts?query={}&sort={"date": -1}&limit=${3}&skip=${skip}`
                 }
                 else{
-                    kinveyListUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + `/posts?query={}&limit=3&skip=0`
+                    kinveyListUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + `/posts?query={}&sort={"date": -1}&limit=3&skip=0`
                 }
                 var self = this;
                 axios({
@@ -145,7 +145,7 @@
     }
 </script>
 
-<style>
+<style scoped="">
     .card-panel{
         color:#fff;
     }
@@ -157,9 +157,11 @@
     }
     .float-left{
         float:left;
+        margin-top: -10px;
     }
     .float-right{
         float:right;
+        margin-top: -10px;
     }
     i{
         font-size:30px !important;
