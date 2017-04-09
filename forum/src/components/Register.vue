@@ -13,7 +13,7 @@
                     <div class="input-field">
                         <input v-model="password" id="pass" type="text" placeholder="Password">
                     </div>
-                    <button @click="register()" class="btn waves-effect waves-light">Login</button>
+                    <button @click="register()" class="btn waves-effect waves-light">Register</button>
                     <div v-if="message">{{message}}</div>
                 </div>
             </div>
