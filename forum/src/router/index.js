@@ -7,6 +7,7 @@ import ListPosts from '@/components/ListPosts.vue'
 import CreatePost from '@/components/CreatePost.vue'
 import Post from '@/components/Post.vue'
 import EditPost from '@/components/EditPost.vue'
+import Profile from '@/components/Profile.vue'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
           path: '/post/edit/:identification/:postTitle',
           name: 'EditPost',
           component: EditPost
+      },
+      {
+          path: '/user/:username',
+          name: 'Profile',
+          component: Profile
       }
   ]
 })

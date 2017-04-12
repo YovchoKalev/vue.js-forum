@@ -8,7 +8,9 @@
             <div class="col s4">
                 <div class="card-panel teal lighten-2 text-white">
                     <div class="float-left">
-                        Author: {{author}}
+                        <router-link class="truncate" :to="{ name: 'Profile', params: {username:author}}">
+                                {{author}}
+                        </router-link>
                      </div>
                     <div class="float-right">
                         Date: {{date}}

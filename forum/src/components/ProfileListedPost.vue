@@ -2,23 +2,17 @@
     <div class="row">
         <div class="col s3 center">
             <div class="card-panel teal lighten-2 text-white">
-            {{ date }}
+                {{ date }}
             </div>
         </div>
-        <div class="col s6 center truncate">
+        <div class="col s9 center truncate">
             <router-link class="truncate" :to="{ name: 'Post', params: {identification:identification, postTitle: title.replace(/\s+/g, '-').toLowerCase()}}">
-                    <div class="card-panel teal lighten-2 text-white truncate">
+                <div class="card-panel teal lighten-2 text-white truncate">
                     {{title}}
                     </div>
-                </router-link>
+            </router-link>
         </div>
-        <div class="col s3 center">
-                <router-link class="truncate" :to="{ name: 'Profile', params: {username:author}}">
-                    <div class="card-panel teal lighten-2 text-white truncate">
-                        {{author}}
-                    </div>
-                </router-link>
-        </div>
+
     </div>
 </template>
 

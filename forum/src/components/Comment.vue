@@ -6,13 +6,15 @@
             </div>
         </div>
         <div class="col s6 center">
-                <div class="card-panel text-white">
+                <div class="card-panel text-white truncate">
                     {{content}}
                     </div>
         </div>
         <div class="col s3 center">
             <div class="card-panel text-white">
-                {{ author }}
+                <router-link class="truncate white-text" :to="{ name: 'Profile', params: {username:author}}">
+                    {{author}}
+                        </router-link>
             </div>
         </div>
     </div>
